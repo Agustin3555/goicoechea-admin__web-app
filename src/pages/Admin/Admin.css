@@ -1,0 +1,38 @@
+.admin {
+  position: relative;
+  height: 100%;
+
+  .deep-touch {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--palette-color-gs-19);
+
+    &[data-disable='false'] {
+      opacity: 0.25;
+      visibility: visible;
+
+      transition: opacity var(--palette-time-xs) ease-out;
+    }
+
+    &[data-disable='true'] {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity var(--palette-time-xs) ease-out,
+        visibility var(--palette-time-xs) var(--palette-time-xs);
+    }
+  }
+
+  @media (min-width: 90rem) {
+    .deep-touch[data-disable='false'] {
+      opacity: 0;
+      visibility: hidden;
+
+      transition: opacity var(--palette-time-xs) ease-out,
+        visibility var(--palette-time-xs) var(--palette-time-xs);
+    }
+  }
+}

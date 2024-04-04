@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route } from 'react-router-dom'
 import { PrivateRoutes, PublicRoutes } from './routes'
 import { AuthGuard } from './guards'
 import { Background, RoutesWithNotFound, Snackbar } from './components'
-import { Login } from './pages'
+import { Admin, Login } from './pages'
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
 
           {/* Protected Routes */}
           <Route element={<AuthGuard />}>
-            <Route path={PrivateRoutes.ADMIN} element={<p>Admin</p>} />
+            <Route path={PrivateRoutes.ADMIN} element={<Admin />} />
           </Route>
         </RoutesWithNotFound>
       </BrowserRouter>

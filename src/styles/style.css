@@ -166,7 +166,8 @@ button {
   position: relative;
   border-radius: var(--border-radius);
 
-  backdrop-filter: blur(0.875rem);
+  background-color: rgba(255, 255, 255, 0.375);
+  backdrop-filter: blur(0.625rem);
 
   &::before {
     content: '';
@@ -175,20 +176,12 @@ button {
     height: 100%;
     border-radius: var(--border-radius);
 
+    /* Reflexes */
     background: linear-gradient(
       -30deg,
-      rgba(160, 160, 160, 0.05625) 25%,
-      rgba(160, 160, 160, 0.1125) 75%,
-      rgba(160, 160, 160, 0.28125) 100%
-    );
-  }
-
-  body[data-dark-mode='true'] &::before {
-    background: linear-gradient(
-      -30deg,
-      rgba(160, 160, 160, 0.028125) 25%,
-      rgba(160, 160, 160, 0.05625) 75%,
-      rgba(160, 160, 160, 0.140625) 100%
+      rgba(255, 255, 255, 0.1125) 25%,
+      rgba(255, 255, 255, 0.225) 75%,
+      rgba(255, 255, 255, 0.5625) 100%
     );
   }
 
@@ -200,7 +193,7 @@ button {
   }
 }
 
-.glass-initial {
+.glass--initial {
   border-radius: 0;
 
   &::before {

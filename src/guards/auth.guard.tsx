@@ -6,7 +6,7 @@ const AuthGuard = () => {
   const authUser = useAppStore(state => state.authUser)
 
   // TODO: mejorar la verificacion
-  return authUser.name ? (
+  return authUser?.name ? (
     <Outlet />
   ) : (
     <Navigate replace to={PublicRoutes.LOGIN} />

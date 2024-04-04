@@ -1,0 +1,37 @@
+.section-button {
+  --size: var(--palette-size-not-font-m);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--palette-size-not-font-4xs);
+
+  color: var(--palette-color-gs-12);
+  background-color: var(--palette-color-gs-0);
+  cursor: pointer;
+
+  transition: color var(--palette-time-s) ease-out,
+    background-color var(--palette-time-s) ease-out,
+    box-shadow var(--palette-time-s) ease-out;
+
+  &:hover {
+    box-shadow: var(--decorator-shadow-1);
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.section-button--active {
+  color: var(--palette-color-gs-0);
+  background-color: var(--palette-color-a);
+  cursor: default;
+
+  &:hover {
+    box-shadow: initial;
+  }
+}

@@ -1,0 +1,23 @@
+nav {
+  --gap: var(--palette-size-not-font-xs);
+  --border-radius: var(--palette-size-not-font-2xs);
+
+  display: inline-block;
+  height: 100%;
+
+  box-shadow: var(--decorator-shadow-1);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--gap);
+    height: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+  }
+}
