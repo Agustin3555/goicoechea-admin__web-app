@@ -1,0 +1,14 @@
+:root {
+  --cmp-icon-size: 1.25rem;
+}
+
+.icon {
+  --fa-display: flex;
+
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: var(--cmp-icon-size);
+  height: var(--cmp-icon-size);
+  font-size: var(--cmp-icon-size);
+}

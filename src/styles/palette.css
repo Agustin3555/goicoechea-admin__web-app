@@ -1,0 +1,94 @@
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  /* FONT_SIZE */
+
+  --palette-size-font-xs: 0.8125rem;
+  --palette-size-font-s: 1rem;
+  --palette-size-font-m: 1.25rem;
+  --palette-size-font-l: 1.5rem;
+  --palette-size-font-xl: 1.875rem;
+  --palette-size-font-2xl: 2.8125rem;
+
+  /* NOT_FONT_SIZE */
+
+  --palette-size-not-font-6xs: 0.0625rem;
+  --palette-size-not-font-5xs: 0.125rem;
+  --palette-size-not-font-4xs: 0.25rem;
+  --palette-size-not-font-3xs: 0.375rem;
+  --palette-size-not-font-2xs: 0.625rem;
+  --palette-size-not-font-xs: 1rem;
+  --palette-size-not-font-s: 1.625rem;
+  --palette-size-not-font-m: 2.625rem;
+  --palette-size-not-font-l: 4.25rem;
+  --palette-size-not-font-xl: 6.875rem;
+  --palette-size-not-font-2xl: 11.0625rem;
+  --palette-size-not-font-3xl: 17.9375rem;
+  --palette-size-not-font-4xl: 29rem;
+  --palette-size-not-font-5xl: 47rem;
+  --palette-size-not-font-6xl: 76rem;
+
+  /* COLOR */
+
+  --palette-color-a-d2: #000000;
+  --palette-color-a-d1: #000000;
+  --palette-color-a: #bd4128;
+  --palette-color-a-l1: #000000;
+  --palette-color-a-l2: #000000;
+
+  --palette-color-b-d2: #000000;
+  --palette-color-b-d1: #000000;
+  --palette-color-b: #8f731e;
+  --palette-color-b-l1: #000000;
+  --palette-color-b-l2: #000000;
+
+  --palette-color-c-d2: #000000;
+  --palette-color-c-d1: #000000;
+  --palette-color-c: #1d8725;
+  --palette-color-c-l1: #000000;
+  --palette-color-c-l2: #000000;
+
+  --palette-color-d-d2: #000000;
+  --palette-color-d-d1: #000000;
+  --palette-color-d: #2866bd;
+  --palette-color-d-l1: #000000;
+  --palette-color-d-l2: #000000;
+
+  --palette-color-gs-19: #000000;
+  --palette-color-gs-18: #0d0d0d;
+  --palette-color-gs-17: #1b1b1b;
+  --palette-color-gs-16: #282828;
+  --palette-color-gs-15: #363636;
+  --palette-color-gs-14: #434343;
+  --palette-color-gs-13: #515151;
+  --palette-color-gs-12: #5e5e5e;
+  --palette-color-gs-11: #6b6b6b;
+  --palette-color-gs-10: #797979;
+  --palette-color-gs-9: #868686;
+  --palette-color-gs-8: #949494;
+  --palette-color-gs-7: #a1a1a1;
+  --palette-color-gs-6: #afafaf;
+  --palette-color-gs-5: #bcbcbc;
+  --palette-color-gs-4: #c9c9c9;
+  --palette-color-gs-3: #d7d7d7;
+  --palette-color-gs-2: #e4e4e4;
+  --palette-color-gs-1: #f2f2f2;
+  --palette-color-gs-0: #ffffff;
+
+  /* TIME */
+
+  --palette-time-xs: 0.1s;
+  --palette-time-s: 0.2s;
+  --palette-time-m: 0.4s;
+  --palette-time-l: 1s;
+  --palette-time-xl: 2s;
+
+  /* TIMING_FUNC */
+
+  --palette-timing-func-a: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* FONT */
+
+  --palette-font-a: 'Inter', Segoe UI;
+  --palette-font-b: 'Roboto Mono Variable', 'Cascadia Code', Segoe UI;
+}

@@ -1,0 +1,42 @@
+:root {
+  --input-font-size: var(--palette-size-font-xs);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4375rem;
+
+  label {
+    font-size: var(--palette-size-font-xs);
+
+    color: var(--palette-color-gs-14);
+  }
+
+  input {
+    width: 100%;
+    padding-inline: var(--input-font-size);
+    height: var(--palette-size-not-font-m);
+    font-size: var(--input-font-size);
+    border-width: var(--glb-line-width);
+    border-radius: var(--palette-size-not-font-4xs);
+
+    color: var(--palette-color-gs-14);
+    background: transparent;
+    border-style: solid;
+    border-color: rgba(189, 65, 40, 0.375);
+
+    transition: color var(--palette-time-s) ease-out,
+      border-color var(--palette-time-s) ease-out;
+
+    &:focus {
+      color: var(--palette-color-gs-19);
+      border-color: rgba(189, 65, 40, 1);
+    }
+
+    &::placeholder {
+      color: var(--palette-color-gs-8);
+    }
+  }
+}

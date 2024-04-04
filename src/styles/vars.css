@@ -1,0 +1,88 @@
+:root {
+  --color-a-bg-light: var(--palette-color-gs-0);
+  --color-a-bg-dark: var(--palette-color-gs-17);
+  --color-a-content-light: var(--palette-color-gs-13);
+  --color-a-content-dark: var(--palette-color-gs-5);
+  --color-a-line-light: var(--palette-color-gs-7);
+  --color-a-line-dark: var(--palette-color-gs-11);
+
+  --color-b-bg-light: var(--palette-color-gs-3);
+  --color-b-bg-dark: var(--palette-color-gs-14);
+  --color-b-content-light: var(--palette-color-gs-14);
+  --color-b-content-dark: var(--palette-color-gs-3);
+  --color-b-line-light: var(--palette-color-gs-8);
+  --color-b-line-dark: var(--palette-color-gs-9);
+
+  --color-c-bg-light: var(--palette-color-gs-1);
+  --color-c-bg-dark: var(--palette-color-gs-16);
+  --color-c-content-light: var(--palette-color-b-d2);
+  --color-c-content-dark: var(--palette-color-b-l2);
+
+  --size-gold: var(--palette-size-not-font-s);
+  --size-silver: calc(var(--size-gold) * 1.5);
+
+  --glb-font-size: var(--palette-size-font-s);
+
+  --decorator-shadow-0: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.1),
+    0.4px 0.8px 1px rgba(0, 0, 0, 0.1), 1px 2px 2.5px rgba(0, 0, 0, 0.1);
+  --decorator-shadow-1: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.09),
+    0.7px 1.3px 1.7px rgba(0, 0, 0, 0.09), 1.3px 2.6px 3.3px rgba(0, 0, 0, 0.09),
+    2.6px 5.2px 6.5px rgba(0, 0, 0, 0.09), 5px 10px 12.6px rgba(0, 0, 0, 0.09);
+  --decorator-shadow-2: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.08),
+    1.2px 2.4px 3px rgba(0, 0, 0, 0.08), 2.1px 4.3px 5.4px rgba(0, 0, 0, 0.08),
+    3.2px 6.5px 8.2px rgba(0, 0, 0, 0.08),
+    4.7px 9.4px 11.8px rgba(0, 0, 0, 0.08),
+    6.8px 13.6px 17.1px rgba(0, 0, 0, 0.08),
+    9.6px 19.3px 24.3px rgba(0, 0, 0, 0.08),
+    13.5px 27px 34px rgba(0, 0, 0, 0.08),
+    18.5px 37.1px 46.6px rgba(0, 0, 0, 0.08),
+    25px 50px 62.9px rgba(0, 0, 0, 0.08);
+
+  --border-width: var(--palette-size-not-font-6xs);
+
+  --decorator-bevel-highlight-top: inset 0 var(--border-width) 0
+    rgba(255, 255, 255, 0.1);
+  --decorator-bevel-highlight-left: inset var(--border-width) 0 0
+    rgba(255, 255, 255, 0.04);
+  --decorator-bevel-highlight-right: inset calc(var(--border-width) * -1) 0 0
+    rgba(255, 255, 255, 0.02);
+  --decorator-bevel-highlight-bottom: inset 0 calc(var(--border-width) * -1) 0
+    rgba(255, 255, 255, 0.02);
+
+  --decorator-bevel-highlight: var(--decorator-bevel-highlight-top),
+    var(--decorator-bevel-highlight-left),
+    var(--decorator-bevel-highlight-right),
+    var(--decorator-bevel-highlight-bottom);
+
+  --component-button-xs-font-size: var(--palette-size-font-xs);
+  --component-button-xs-padding-block: 0.5rem;
+  --component-button-xs-padding-inline: calc(
+    var(--component-button-xs-padding-block) * 1.25
+  );
+  --component-button-xs-gap-elements: calc(
+    var(--component-button-xs-padding-block) * 1.5
+  );
+  --component-button-xs-height: calc(
+    var(--component-button-xs-padding-block) * 2 +
+      var(--component-button-xs-font-size)
+  );
+  --component-button-xs-border-radius: 0.3125rem;
+
+  --component-button-s-padding: var(--palette-size-not-font-2xs);
+  --component-button-s-icon-size: var(--palette-size-font-m);
+  --component-button-s-size: calc(
+    var(--component-button-s-padding) * 2 + var(--component-button-s-icon-size)
+  );
+  --component-button-s-border-radius: var(--palette-size-not-font-3xs);
+
+  --component-button-m-icon-size: var(--palette-size-font-xl);
+  --component-button-m-padding: var(--palette-size-font-s);
+  --component-button-m-size: calc(
+    var(--component-button-m-padding) * 2 + var(--component-button-m-icon-size)
+  );
+  --component-button-m-border-radius: var(--palette-size-not-font-2xs);
+
+  --component-link-translate-value: 0 -0.1875rem;
+  --component-link-translate-transition: translate var(--palette-time-m)
+    var(--palette-timing-func-a);
+}

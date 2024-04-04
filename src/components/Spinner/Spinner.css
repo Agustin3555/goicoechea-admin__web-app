@@ -1,0 +1,72 @@
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  position: relative;
+  width: var(--cmp-spinner-size);
+  height: var(--cmp-spinner-size);
+
+  animation: rotate 1.55s ease-in infinite alternate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: var(--cmp-spinner-size);
+    height: calc(var(--cmp-spinner-size) * 0.5);
+    border-radius: 0 0 var(--palette-size-not-font-6xl)
+      var(--palette-size-not-font-6xl);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    height: var(--cmp-spinner-size);
+    border-radius: var(--palette-size-not-font-6xl);
+
+    animation: rotate 1.25s linear infinite alternate-reverse;
+  }
+}
+
+.spinner--size-s {
+  --cmp-spinner-size: 1.25rem;
+
+  &::after {
+    width: var(--palette-size-not-font-5xs);
+  }
+}
+
+.spinner--size-m {
+  --cmp-spinner-size: var(--palette-size-font-l);
+
+  &::after {
+    width: 0.1875rem;
+  }
+}
+
+.spinner--color-a {
+  &::before {
+    background-color: var(--palette-color-gs-0);
+  }
+
+  &::after {
+    background-color: var(--palette-color-gs-14);
+  }
+}
+
+/* TODO: completar variante */
+.spinner--color-b {
+  &::before {
+    background-color: var(--palette-color-gs-0);
+  }
+
+  &::after {
+    background-color: var(--palette-color-gs-14);
+  }
+}

@@ -1,0 +1,80 @@
+@keyframes to-ring {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20%,
+  60% {
+    transform: rotate(8deg);
+  }
+  40%,
+  80% {
+    transform: rotate(-8deg);
+  }
+  50%,
+  70% {
+    transform: rotate(5deg);
+  }
+}
+
+.snackbar {
+  color: var(--palette-color-gs-0);
+
+  .animation-container {
+    display: flex;
+    justify-content: center;
+
+    transition: scale var(--palette-time-m) ease,
+      translate var(--palette-time-m) ease, opacity var(--palette-time-m) ease;
+
+    .message {
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: var(--palette-size-font-s);
+      margin: var(--palette-size-not-font-s);
+      padding: var(--palette-size-font-s);
+      border-radius: var(--palette-size-not-font-3xs);
+
+      box-shadow: var(--decorator-shadow-2);
+
+      .icon {
+        flex-grow: 1;
+        flex-shrink: 0;
+
+        animation: to-ring ease-in-out 1.5s infinite alternate;
+      }
+    }
+  }
+
+  .fade-enter {
+    scale: 1.05;
+    translate: 0 var(--palette-size-not-font-xl);
+    opacity: 0;
+  }
+
+  .fade-exit {
+    scale: 1;
+    translate: initial;
+    opacity: 1;
+  }
+
+  .fade-enter-active {
+    scale: 1;
+    translate: initial;
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    scale: 1.05;
+    translate: 0 var(--palette-size-not-font-xl);
+    opacity: 0;
+  }
+
+  @media (min-width: 90rem) {
+    .animation-container .message {
+      max-width: 50%;
+    }
+  }
+}
