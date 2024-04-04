@@ -1,6 +1,6 @@
 import { AuthAdapter } from '@/adapters'
 import { AuthModel } from '@/models'
-import { AppError, publicInstance } from '@/helpers'
+import { AppError, privateInstance, publicInstance } from '@/helpers'
 
 const collection = '/auth'
 
@@ -14,5 +14,13 @@ export const login = async (data: AuthModel.LoginData) => {
   if (!response || response instanceof AppError) return response as AppError
 
   const adaptedResponse = AuthAdapter.login.output(response.data)
+  return adaptedResponse
+}
+
+export const me = async () => {
+  const response = await privateInstance.get(`${collection}/me`)
+  if (!response || response instanceof AppError) return response as AppError
+
+  const adaptedResponse = AuthAdapter.me.output(response.data)
   return adaptedResponse
 }

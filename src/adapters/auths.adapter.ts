@@ -1,4 +1,4 @@
-import { AuthModel } from '@/models'
+import { AuthModel, UserModel } from '@/models'
 import { InputAdapter, OutputAdapter } from '@/helpers'
 
 export const login: {
@@ -15,7 +15,25 @@ export const login: {
   },
   output: response => {
     const convertedResource: AuthModel.LoginResponse = {
-      token: response.access_token,
+      token: response.token,
+    }
+
+    return convertedResource
+  },
+}
+
+export const me: {
+  output: OutputAdapter<any, UserModel.FullData>
+} = {
+  output: response => {
+    const convertedResource: UserModel.FullData = {
+      id: response.id,
+      name: response.name,
+      lastName: response.lastName,
+      email: response.email,
+      role: response.role,
+      createdAt: response.createdAt,
+      updatedAt: response.updatedAt,
     }
 
     return convertedResource

@@ -1,24 +1,24 @@
 import './Login.css'
 import {
-  Input,
-  LoadingButton,
-  LoadingButtonState,
-  SinglePage,
-} from '@/components'
-import { PRIVATE_ROUTES } from '@/routes'
-import { AuthService, UserService, tokenEntity } from '@/services'
-import {
   ChangeEventHandler,
   FormEventHandler,
   useEffect,
   useState,
 } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { AppError, sleep } from '@/helpers'
+import {
+  Input,
+  LoadingButton,
+  LoadingButtonState,
+  SinglePage,
+} from '@/components'
+import { AuthService, tokenEntity } from '@/services'
 import { NotifType, useAppStore } from '@/store'
+import { useNavigate } from 'react-router-dom'
+import { PrivateRoutes } from '@/routes'
+import { AppError, sleep } from '@/helpers'
 
 const Login = () => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const authUser_set = useAppStore(state => state.authUser_set)
   const authUser_reset = useAppStore(state => state.authUser_reset)
@@ -55,9 +55,8 @@ const Login = () => {
       setLoadingButtonState(LoadingButtonState.ERROR)
     } else {
       tokenEntity.set(loginResponse.token)
-      const userResponse = await UserService.me()
 
-      console.log(userResponse)
+      const userResponse = await AuthService.me()
 
       if (userResponse) {
         authUser_set(userResponse)
@@ -72,7 +71,7 @@ const Login = () => {
         await sleep(1500)
 
         // Redirigir al usuario a la página de administración
-        // navigate(`/${PRIVATE_ROUTES.admin}`, { replace: true })
+        navigate(`/${PrivateRoutes.ADMIN}`, { replace: true })
       }
     }
 

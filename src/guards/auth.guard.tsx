@@ -1,13 +1,15 @@
-import { PUBLIC_ROUTES } from '@/routes'
+import { PublicRoutes } from '@/routes'
+import { useAppStore } from '@/store'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const AuthGuard = () => {
-  const userState = useSelector((store: AppStore) => store.user)
+  const authUser = useAppStore(state => state.authUser)
 
-  return userState.name ? (
+  // TODO: mejorar la verificacion
+  return authUser.name ? (
     <Outlet />
   ) : (
-    <Navigate replace to={PUBLIC_ROUTES.login} />
+    <Navigate replace to={PublicRoutes.LOGIN} />
   )
 }
 

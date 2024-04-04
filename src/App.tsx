@@ -1,30 +1,29 @@
-// import { BrowserRouter, Navigate, Route } from 'react-router-dom'
-import { Login, NotFound } from './pages'
-import { Background, Snackbar } from './components'
-// import { AuthGuard } from './guards'
-// import { PRIVATE_ROUTES, PUBLIC_ROUTES } from './routes'
+import { BrowserRouter, Navigate, Route } from 'react-router-dom'
+import { PrivateRoutes, PublicRoutes } from './routes'
+import { AuthGuard } from './guards'
+import { Background, RoutesWithNotFound, Snackbar } from './components'
+import { Login } from './pages'
 
 const App = () => {
   return (
     <>
       <Background />
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <RoutesWithNotFound>
           <Route
-          path="/"
-          element={<Navigate replace to={PRIVATE_ROUTES.admin} />}
+            path="/"
+            element={<Navigate replace to={PrivateRoutes.ADMIN} />}
           />
 
-          Public Routes
-          <Route path={PUBLIC_ROUTES.login} element={<Login />} />
+          {/* Public Routes */}
+          <Route path={PublicRoutes.LOGIN} element={<Login />} />
 
-          Protected Routes
+          {/* Protected Routes */}
           <Route element={<AuthGuard />}>
-          <Route path={PRIVATE_ROUTES.admin} element={<Admin />} />
+            <Route path={PrivateRoutes.ADMIN} element={<p>Admin</p>} />
           </Route>
-          </RoutesWithNotFound>
-        </BrowserRouter> */}
-      <Login />
+        </RoutesWithNotFound>
+      </BrowserRouter>
       <Snackbar />
     </>
   )

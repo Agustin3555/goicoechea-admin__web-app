@@ -1,6 +1,6 @@
-export enum ROLE {
-  admin = 'ADMIN',
-  employee = 'EMPLOYEE',
+export enum UserRole {
+  EMPLOYEE = 'EMPLOYEE',
+  ADMIN = 'ADMIN',
 }
 
 export interface MinData {
@@ -11,7 +11,7 @@ export interface MinData {
 export interface RemainingData {
   lastName: string | null
   email: string
-  role: ROLE
+  role: UserRole
   createdAt: string
   updatedAt: string | null
 }
@@ -22,34 +22,34 @@ export interface CreateData {
   name: string
   lastName?: string
   email: string
-  role: ROLE
+  role: UserRole
 }
 
 export interface CreateBody {
   name: string
   lastName?: string
   email: string
-  role: ROLE
+  role: UserRole
 }
 
 export interface UpdateData {
   name?: string
   lastName?: string
   email?: string
-  role?: ROLE
+  role?: UserRole
 }
 
 export interface UpdateBody {
   name?: string
   lastName?: string
   email?: string
-  role?: ROLE
+  role?: UserRole
 }
 
 export interface UpdateResponse {
   name?: string
   lastName?: string
   email?: string
-  role?: ROLE
+  role?: UserRole
   updatedAt: string
 }

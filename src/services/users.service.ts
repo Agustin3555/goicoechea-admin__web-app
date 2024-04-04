@@ -4,15 +4,6 @@ import { AppError, privateInstance } from '@/helpers'
 
 const collection = '/users'
 
-// TODO: pasar a auths
-export const me = async () => {
-  const response = await privateInstance.get(`${collection}/me`)
-  if (!response || response instanceof AppError) return response as AppError
-
-  const adaptedResponse = UserAdapter.me.output(response.data)
-  return adaptedResponse
-}
-
 export const getAll = async () => {
   const response = await privateInstance.get(collection)
   if (!response || response instanceof AppError) return response as AppError

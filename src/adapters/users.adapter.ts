@@ -1,24 +1,6 @@
 import { UserModel } from '@/models'
 import { InputAdapter, OutputAdapter } from '@/helpers'
 
-export const me: {
-  output: OutputAdapter<any, UserModel.FullData>
-} = {
-  output: response => {
-    const convertedResource: UserModel.FullData = {
-      id: response.id,
-      name: response.name,
-      lastName: response.lastName,
-      email: response.email,
-      role: response.role,
-      createdAt: response.createdAt,
-      updatedAt: response.updatedAt,
-    }
-
-    return convertedResource
-  },
-}
-
 export const getAll: {
   output: OutputAdapter<any[], UserModel.MinData[]>
 } = {
