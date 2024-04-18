@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from 'react'
 import { Validation } from '.'
+import { UserModel } from '@/models'
 
 export interface Checkbox {
   defaultValue: boolean
@@ -12,7 +13,7 @@ export interface Input {
 }
 
 export interface Selector {
-  sectionDependency?: SECTION_KEYS[]
+  sectionDependency?: SectionKeys[]
 }
 
 export interface InputSelector extends Input, Selector {}
@@ -31,14 +32,14 @@ export interface GroupField extends Field {
   }
 }
 
-export enum SECTION_KEYS {
-  sales = 'sales',
-  offers = 'offers',
-  products = 'products',
-  manufacturers = 'manufacturers',
-  categories = 'categories',
-  users = 'users',
-  me = 'me',
+export enum SectionKeys {
+  SALES = 'sales',
+  OFFERS = 'offers',
+  PRODUCTS = 'products',
+  MANUFACTURERS = 'manufacturers',
+  CATEGORIES = 'categories',
+  USERS = 'users',
+  ME = 'me',
 }
 
 export enum SALE_VIEW_KEYS {
@@ -118,11 +119,11 @@ export enum ME_VIEW_KEYS {
 export const SECTIONS: {
   [key: string]: {
     title: string
-    iconName: string
+    faIcon: string
     views: {
       [key: string]: {
         title: string
-        iconName: string
+        faIcon: string
       }
     }
     fields?: {
@@ -130,37 +131,37 @@ export const SECTIONS: {
     }
   }
 } = {
-  [SECTION_KEYS.sales]: {
+  [SectionKeys.SALES]: {
     title: 'Ventas',
-    iconName: 'fa-solid fa-cash-register',
+    faIcon: 'fa-solid fa-cash-register',
     views: {
       [SALE_VIEW_KEYS.view]: {
         title: 'view',
-        iconName: '',
+        faIcon: '',
       },
     },
   },
-  [SECTION_KEYS.offers]: {
+  [SectionKeys.OFFERS]: {
     title: 'Ofertas',
-    iconName: 'fa-solid fa-fire',
+    faIcon: 'fa-solid fa-fire',
     views: {
       [OFFER_VIEW_KEYS.view]: {
         title: 'view',
-        iconName: '',
+        faIcon: '',
       },
     },
   },
-  [SECTION_KEYS.products]: {
+  [SectionKeys.PRODUCTS]: {
     title: 'Productos',
-    iconName: 'fa-solid fa-boxes-stacked',
+    faIcon: 'fa-solid fa-boxes-stacked',
     views: {
       [PRODUCT_VIEW_KEYS.search]: {
         title: 'Buscar',
-        iconName: 'fa-solid fa-magnifying-glass',
+        faIcon: 'fa-solid fa-magnifying-glass',
       },
       [PRODUCT_VIEW_KEYS.new]: {
         title: 'Nuevo',
-        iconName: 'fa-solid fa-plus',
+        faIcon: 'fa-solid fa-plus',
       },
     },
     fields: {
@@ -244,13 +245,13 @@ export const SECTIONS: {
       [PRODUCT_FIELD_KEYS.category]: {
         title: 'Categoría',
         extra: {
-          sectionDependency: [SECTION_KEYS.categories],
+          sectionDependency: [SectionKeys.CATEGORIES],
         },
       },
       [PRODUCT_FIELD_KEYS.manufacturer]: {
         title: 'Fabricante',
         extra: {
-          sectionDependency: [SECTION_KEYS.manufacturers],
+          sectionDependency: [SectionKeys.MANUFACTURERS],
         },
       },
       [PRODUCT_FIELD_KEYS.chars]: {
@@ -262,7 +263,7 @@ export const SECTIONS: {
           [PRODUCT_BOOLEAN_CHARS_FIELD_KEYS.key]: {
             title: 'Nombre',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
           [PRODUCT_BOOLEAN_CHARS_FIELD_KEYS.value]: {
@@ -279,20 +280,20 @@ export const SECTIONS: {
           [PRODUCT_QUANTITY_CHARS_FIELD_KEYS.key]: {
             title: 'Nombre',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
           [PRODUCT_QUANTITY_CHARS_FIELD_KEYS.value]: {
             title: 'Valor',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
               inputExtraAttrs: { type: 'number' },
             },
           },
           [PRODUCT_QUANTITY_CHARS_FIELD_KEYS.unit]: {
             title: 'Unidad',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
         },
@@ -303,27 +304,27 @@ export const SECTIONS: {
           [PRODUCT_FRACTION_CHARS_FIELD_KEYS.key]: {
             title: 'Nombre',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
           [PRODUCT_FRACTION_CHARS_FIELD_KEYS.numeratorValue]: {
             title: 'Numerador',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
               inputExtraAttrs: { type: 'number' },
             },
           },
           [PRODUCT_FRACTION_CHARS_FIELD_KEYS.denominatorValue]: {
             title: 'Denominador',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
               inputExtraAttrs: { type: 'number' },
             },
           },
           [PRODUCT_FRACTION_CHARS_FIELD_KEYS.unit]: {
             title: 'Unidad',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
         },
@@ -334,57 +335,84 @@ export const SECTIONS: {
           [PRODUCT_STRING_CHARS_FIELD_KEYS.key]: {
             title: 'Nombre',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
           [PRODUCT_STRING_CHARS_FIELD_KEYS.value]: {
             title: 'Valor',
             extra: {
-              sectionDependency: [SECTION_KEYS.products],
+              sectionDependency: [SectionKeys.PRODUCTS],
             },
           },
         },
       },
     },
   },
-  [SECTION_KEYS.manufacturers]: {
+  [SectionKeys.MANUFACTURERS]: {
     title: 'Fabricantes',
-    iconName: 'fa-solid fa-industry',
+    faIcon: 'fa-solid fa-industry',
     views: {
       [MANUFACTURER_VIEW_KEYS.view]: {
         title: 'view',
-        iconName: '',
+        faIcon: '',
       },
     },
   },
-  [SECTION_KEYS.categories]: {
+  [SectionKeys.CATEGORIES]: {
     title: 'Categorías',
-    iconName: 'fa-solid fa-sitemap',
+    faIcon: 'fa-solid fa-sitemap',
     views: {
       [CATEGORY_VIEW_KEYS.view]: {
         title: 'view',
-        iconName: '',
+        faIcon: '',
       },
     },
   },
-  [SECTION_KEYS.users]: {
+  [SectionKeys.USERS]: {
     title: 'Usuarios',
-    iconName: 'fa-solid fa-users',
+    faIcon: 'fa-solid fa-users',
     views: {
       [USER_VIEW_KEYS.view]: {
         title: 'view',
-        iconName: '',
+        faIcon: '',
       },
     },
   },
-  [SECTION_KEYS.me]: {
+  [SectionKeys.ME]: {
     title: 'Mi cuenta',
-    iconName: 'fa-solid fa-user',
+    faIcon: 'fa-solid fa-user',
     views: {
       [ME_VIEW_KEYS.profile]: {
         title: 'Perfil',
-        iconName: 'fa-solid fa-address-card',
+        faIcon: 'fa-solid fa-address-card',
       },
     },
+  },
+}
+
+export const ALLOWED_SECTIONS: Record<
+  UserModel.UserRole,
+  Record<'top' | 'bot', Partial<Record<SectionKeys, string[]>>>
+> = {
+  [UserModel.UserRole.EMPLOYEE]: {
+    top: {
+      [SectionKeys.SALES]: [SALE_VIEW_KEYS.view],
+      [SectionKeys.OFFERS]: [OFFER_VIEW_KEYS.view],
+      [SectionKeys.PRODUCTS]: [PRODUCT_VIEW_KEYS.new, PRODUCT_VIEW_KEYS.search],
+      [SectionKeys.MANUFACTURERS]: [MANUFACTURER_VIEW_KEYS.view],
+      [SectionKeys.CATEGORIES]: [CATEGORY_VIEW_KEYS.view],
+    },
+    bot: { [SectionKeys.ME]: [ME_VIEW_KEYS.profile] },
+  },
+  [UserModel.UserRole.ADMIN]: {
+    top: {
+      [SectionKeys.SALES]: [SALE_VIEW_KEYS.view],
+      [SectionKeys.OFFERS]: [OFFER_VIEW_KEYS.view],
+      [SectionKeys.PRODUCTS]: [PRODUCT_VIEW_KEYS.new, PRODUCT_VIEW_KEYS.search],
+      [SectionKeys.MANUFACTURERS]: [MANUFACTURER_VIEW_KEYS.view],
+      [SectionKeys.CATEGORIES]: [CATEGORY_VIEW_KEYS.view],
+      [SectionKeys.USERS]: [USER_VIEW_KEYS.view],
+    },
+    bot: { [SectionKeys.ME]: [ME_VIEW_KEYS.profile] },
   },
 }

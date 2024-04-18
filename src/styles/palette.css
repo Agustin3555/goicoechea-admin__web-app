@@ -1,94 +1,159 @@
 @import url('https://rsms.me/inter/inter.css');
 
 :root {
-  /* FONT_SIZE */
+  /* TODO: aplicar fallbacks */
+  --pal-font-a: 'Inter', Segoe UI;
+  --pal-font-b: 'Roboto Mono Variable', 'Cascadia Code', Segoe UI;
 
-  --palette-size-font-xs: 0.8125rem;
-  --palette-size-font-s: 1rem;
-  --palette-size-font-m: 1.25rem;
-  --palette-size-font-l: 1.5rem;
-  --palette-size-font-xl: 1.875rem;
-  --palette-size-font-2xl: 2.8125rem;
+  --pal-size-font-xs: 0.8125rem;
+  --pal-size-font-s: 1rem;
+  --pal-size-font-m: 1.25rem;
+  --pal-size-font-l: 1.5rem;
+  --pal-size-font-xl: 1.875rem;
+  --pal-size-font-2xl: 2.8125rem;
 
-  /* NOT_FONT_SIZE */
+  --pal-size-not-font-6xs: 0.0625rem;
+  --pal-size-not-font-5xs: 0.125rem;
+  --pal-size-not-font-4xs: 0.25rem;
+  --pal-size-not-font-3xs: 0.375rem;
+  --pal-size-not-font-2xs: 0.625rem;
+  --pal-size-not-font-xs: 1rem;
+  --pal-size-not-font-s: 1.625rem;
+  --pal-size-not-font-m: 2.625rem;
+  --pal-size-not-font-l: 4.25rem;
+  --pal-size-not-font-xl: 6.875rem;
+  --pal-size-not-font-2xl: 11.0625rem;
+  --pal-size-not-font-3xl: 17.9375rem;
+  --pal-size-not-font-4xl: 29rem;
+  --pal-size-not-font-5xl: 47rem;
+  --pal-size-not-font-6xl: 76rem;
 
-  --palette-size-not-font-6xs: 0.0625rem;
-  --palette-size-not-font-5xs: 0.125rem;
-  --palette-size-not-font-4xs: 0.25rem;
-  --palette-size-not-font-3xs: 0.375rem;
-  --palette-size-not-font-2xs: 0.625rem;
-  --palette-size-not-font-xs: 1rem;
-  --palette-size-not-font-s: 1.625rem;
-  --palette-size-not-font-m: 2.625rem;
-  --palette-size-not-font-l: 4.25rem;
-  --palette-size-not-font-xl: 6.875rem;
-  --palette-size-not-font-2xl: 11.0625rem;
-  --palette-size-not-font-3xl: 17.9375rem;
-  --palette-size-not-font-4xl: 29rem;
-  --palette-size-not-font-5xl: 47rem;
-  --palette-size-not-font-6xl: 76rem;
+  --pal-color-base-a-d2: 0, 0, 0;
+  --pal-color-base-a-d1: 0, 0, 0;
+  --pal-color-base-a: 189, 65, 40;
+  --pal-color-base-a-l1: 0, 0, 0;
+  --pal-color-base-a-l2: 0, 0, 0;
 
-  /* COLOR */
+  --pal-color-base-b-d2: 0, 0, 0;
+  --pal-color-base-b-d1: 0, 0, 0;
+  --pal-color-base-b: 143, 115, 30;
+  --pal-color-base-b-l1: 0, 0, 0;
+  --pal-color-base-b-l2: 0, 0, 0;
 
-  --palette-color-a-d2: #000000;
-  --palette-color-a-d1: #000000;
-  --palette-color-a: #bd4128;
-  --palette-color-a-l1: #000000;
-  --palette-color-a-l2: #000000;
+  --pal-color-base-c-d2: 0, 0, 0;
+  --pal-color-base-c-d1: 0, 0, 0;
+  --pal-color-base-c: 29, 135, 37;
+  --pal-color-base-c-l1: 0, 0, 0;
+  --pal-color-base-c-l2: 0, 0, 0;
 
-  --palette-color-b-d2: #000000;
-  --palette-color-b-d1: #000000;
-  --palette-color-b: #8f731e;
-  --palette-color-b-l1: #000000;
-  --palette-color-b-l2: #000000;
+  --pal-color-base-d-d2: 0, 0, 0;
+  --pal-color-base-d-d1: 0, 0, 0;
+  --pal-color-base-d: 40, 102, 189;
+  --pal-color-base-d-l1: 0, 0, 0;
+  --pal-color-base-d-l2: 0, 0, 0;
 
-  --palette-color-c-d2: #000000;
-  --palette-color-c-d1: #000000;
-  --palette-color-c: #1d8725;
-  --palette-color-c-l1: #000000;
-  --palette-color-c-l2: #000000;
+  --pal-color-base-gs-19: 0, 0, 0;
+  --pal-color-base-gs-18: 13, 13, 13;
+  --pal-color-base-gs-17: 27, 27, 27;
+  --pal-color-base-gs-16: 40, 40, 40;
+  --pal-color-base-gs-15: 54, 54, 54;
+  --pal-color-base-gs-14: 67, 67, 67;
+  --pal-color-base-gs-13: 81, 81, 81;
+  --pal-color-base-gs-12: 94, 94, 94;
+  --pal-color-base-gs-11: 107, 107, 107;
+  --pal-color-base-gs-10: 121, 121, 121;
+  --pal-color-base-gs-9: 134, 134, 134;
+  --pal-color-base-gs-8: 148, 148, 148;
+  --pal-color-base-gs-7: 161, 161, 161;
+  --pal-color-base-gs-6: 175, 175, 175;
+  --pal-color-base-gs-5: 188, 188, 188;
+  --pal-color-base-gs-4: 201, 201, 201;
+  --pal-color-base-gs-3: 215, 215, 215;
+  --pal-color-base-gs-2: 228, 228, 228;
+  --pal-color-base-gs-1: 242, 242, 242;
+  --pal-color-base-gs-0: 255, 255, 255;
 
-  --palette-color-d-d2: #000000;
-  --palette-color-d-d1: #000000;
-  --palette-color-d: #2866bd;
-  --palette-color-d-l1: #000000;
-  --palette-color-d-l2: #000000;
+  --pal-color-a-d2: rgb(var(--pal-color-base-a-d2));
+  --pal-color-a-d1: rgb(var(--pal-color-base-a-d1));
+  --pal-color-a: rgb(var(--pal-color-base-a));
+  --pal-color-a-l1: rgb(var(--pal-color-base-a-l1));
+  --pal-color-a-l2: rgb(var(--pal-color-base-a-l2));
 
-  --palette-color-gs-19: #000000;
-  --palette-color-gs-18: #0d0d0d;
-  --palette-color-gs-17: #1b1b1b;
-  --palette-color-gs-16: #282828;
-  --palette-color-gs-15: #363636;
-  --palette-color-gs-14: #434343;
-  --palette-color-gs-13: #515151;
-  --palette-color-gs-12: #5e5e5e;
-  --palette-color-gs-11: #6b6b6b;
-  --palette-color-gs-10: #797979;
-  --palette-color-gs-9: #868686;
-  --palette-color-gs-8: #949494;
-  --palette-color-gs-7: #a1a1a1;
-  --palette-color-gs-6: #afafaf;
-  --palette-color-gs-5: #bcbcbc;
-  --palette-color-gs-4: #c9c9c9;
-  --palette-color-gs-3: #d7d7d7;
-  --palette-color-gs-2: #e4e4e4;
-  --palette-color-gs-1: #f2f2f2;
-  --palette-color-gs-0: #ffffff;
+  --pal-color-b-d2: rgb(var(--pal-color-base-b-d2));
+  --pal-color-b-d1: rgb(var(--pal-color-base-b-d1));
+  --pal-color-b: rgb(var(--pal-color-base-b));
+  --pal-color-b-l1: rgb(var(--pal-color-base-b-l1));
+  --pal-color-b-l2: rgb(var(--pal-color-base-b-l2));
 
-  /* TIME */
+  --pal-color-c-d2: rgb(var(--pal-color-base-c-d2));
+  --pal-color-c-d1: rgb(var(--pal-color-base-c-d1));
+  --pal-color-c: rgb(var(--pal-color-base-c));
+  --pal-color-c-l1: rgb(var(--pal-color-base-c-l1));
+  --pal-color-c-l2: rgb(var(--pal-color-base-c-l2));
 
-  --palette-time-xs: 0.1s;
-  --palette-time-s: 0.2s;
-  --palette-time-m: 0.4s;
-  --palette-time-l: 1s;
-  --palette-time-xl: 2s;
+  --pal-color-d-d2: rgb(var(--pal-color-base-d-d2));
+  --pal-color-d-d1: rgb(var(--pal-color-base-d-d1));
+  --pal-color-d: rgb(var(--pal-color-base-d));
+  --pal-color-d-l1: rgb(var(--pal-color-base-d-l1));
+  --pal-color-d-l2: rgb(var(--pal-color-base-d-l2));
 
-  /* TIMING_FUNC */
+  --pal-color-gs-19: rgb(var(--pal-color-base-gs-19));
+  --pal-color-gs-18: rgb(var(--pal-color-base-gs-18));
+  --pal-color-gs-17: rgb(var(--pal-color-base-gs-17));
+  --pal-color-gs-16: rgb(var(--pal-color-base-gs-16));
+  --pal-color-gs-15: rgb(var(--pal-color-base-gs-15));
+  --pal-color-gs-14: rgb(var(--pal-color-base-gs-14));
+  --pal-color-gs-13: rgb(var(--pal-color-base-gs-13));
+  --pal-color-gs-12: rgb(var(--pal-color-base-gs-12));
+  --pal-color-gs-11: rgb(var(--pal-color-base-gs-11));
+  --pal-color-gs-10: rgb(var(--pal-color-base-gs-10));
+  --pal-color-gs-9: rgb(var(--pal-color-base-gs-9));
+  --pal-color-gs-8: rgb(var(--pal-color-base-gs-8));
+  --pal-color-gs-7: rgb(var(--pal-color-base-gs-7));
+  --pal-color-gs-6: rgb(var(--pal-color-base-gs-6));
+  --pal-color-gs-5: rgb(var(--pal-color-base-gs-5));
+  --pal-color-gs-4: rgb(var(--pal-color-base-gs-4));
+  --pal-color-gs-3: rgb(var(--pal-color-base-gs-3));
+  --pal-color-gs-2: rgb(var(--pal-color-base-gs-2));
+  --pal-color-gs-1: rgb(var(--pal-color-base-gs-1));
+  --pal-color-gs-0: rgb(var(--pal-color-base-gs-0));
 
-  --palette-timing-func-a: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --pal-time-xs: 0.1s;
+  --pal-time-s: 0.2s;
+  --pal-time-m: 0.4s;
+  --pal-time-l: 1s;
+  --pal-time-xl: 2s;
 
-  /* FONT */
+  --pal-timing-func-a: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  --palette-font-a: 'Inter', Segoe UI;
-  --palette-font-b: 'Roboto Mono Variable', 'Cascadia Code', Segoe UI;
+  --pal-shadow-0: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.1),
+    0.4px 0.8px 1px rgba(0, 0, 0, 0.1), 1px 2px 2.5px rgba(0, 0, 0, 0.1);
+  --pal-shadow-1: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.09),
+    0.7px 1.3px 1.7px rgba(0, 0, 0, 0.09), 1.3px 2.6px 3.3px rgba(0, 0, 0, 0.09),
+    2.6px 5.2px 6.5px rgba(0, 0, 0, 0.09), 5px 10px 12.6px rgba(0, 0, 0, 0.09);
+  --pal-shadow-2: 0.3px 0.5px 0.7px rgba(0, 0, 0, 0.08),
+    1.2px 2.4px 3px rgba(0, 0, 0, 0.08), 2.1px 4.3px 5.4px rgba(0, 0, 0, 0.08),
+    3.2px 6.5px 8.2px rgba(0, 0, 0, 0.08),
+    4.7px 9.4px 11.8px rgba(0, 0, 0, 0.08),
+    6.8px 13.6px 17.1px rgba(0, 0, 0, 0.08),
+    9.6px 19.3px 24.3px rgba(0, 0, 0, 0.08),
+    13.5px 27px 34px rgba(0, 0, 0, 0.08),
+    18.5px 37.1px 46.6px rgba(0, 0, 0, 0.08),
+    25px 50px 62.9px rgba(0, 0, 0, 0.08);
+
+  --bevel-highlight-border-width: var(--pal-size-not-font-6xs);
+
+  --pal-bevel-highlight-top: inset 0 var(--bevel-highlight-border-width) 0
+    rgba(255, 255, 255, 0.2);
+  --pal-bevel-highlight-left: inset var(--bevel-highlight-border-width) 0 0
+    rgba(255, 255, 255, 0.075);
+  --pal-bevel-highlight-right: inset
+    calc(var(--bevel-highlight-border-width) * -1) 0 0
+    rgba(255, 255, 255, 0.025);
+  --pal-bevel-highlight-bottom: inset 0
+    calc(var(--bevel-highlight-border-width) * -1) 0 rgba(255, 255, 255, 0.025);
+
+  --pal-bevel-highlight: var(--pal-bevel-highlight-top),
+    var(--pal-bevel-highlight-left), var(--pal-bevel-highlight-right),
+    var(--pal-bevel-highlight-bottom);
 }

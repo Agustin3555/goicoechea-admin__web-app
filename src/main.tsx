@@ -3,16 +3,16 @@ import './styles/palette.css'
 import './styles/vars.css'
 import './styles/style.css'
 
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { StrictMode } from 'react'
 import { PrivateInterceptor, PublicInterceptor } from './interceptors'
+import App from './App'
 
 PublicInterceptor()
 PrivateInterceptor()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 )

@@ -1,47 +1,34 @@
 import './Nav.css'
 import { SectionButton } from './components'
 import { useAppStore } from '@/store'
-import { UserModel } from '@/models'
-import { SECTION_KEYS } from '@/pages/Admin/helpers'
+import { ALLOWED_SECTIONS, SectionKeys } from '@/constants'
 
-// TODO: En un futuro se podria obtener esto de la API para mantener una consistente
-const ALLOWED_SECTIONS: Record<UserModel.UserRole, SECTION_KEYS[]> = {
-  [UserModel.UserRole.EMPLOYEE]: [
-    SECTION_KEYS.sales,
-    SECTION_KEYS.offers,
-    SECTION_KEYS.products,
-    SECTION_KEYS.manufacturers,
-    SECTION_KEYS.categories,
-  ],
-  [UserModel.UserRole.ADMIN]: [
-    SECTION_KEYS.sales,
-    SECTION_KEYS.offers,
-    SECTION_KEYS.products,
-    SECTION_KEYS.manufacturers,
-    SECTION_KEYS.categories,
-    SECTION_KEYS.users,
-  ],
-}
+import { UserModel } from '@/models'
 
 const Nav = () => {
-  const { role } = useAppStore(state => state.authUser as UserModel.FullData)
+  const { role } = useAppStore(store => store.authUser as UserModel.FullData)
+  const showNav = useAppStore(store => store.showNav)
 
   return (
-    <nav className="glass">
-      <div>
-        <ul className="top">
-          {ALLOWED_SECTIONS[role].map(item => (
+    <nav data-open={showNav}>
+      <ul className="top">
+        {(Object.keys(ALLOWED_SECTIONS[role].top) as SectionKeys[]).map(
+          item => (
             <li key={item}>
               <SectionButton sectionKey={item} />
             </li>
-          ))}
-        </ul>
-        <ul className="bot">
-          <li key={SECTION_KEYS.me}>
-            <SectionButton sectionKey={SECTION_KEYS.me} />
-          </li>
-        </ul>
-      </div>
+          )
+        )}
+      </ul>
+      <ul className="bot">
+        {(Object.keys(ALLOWED_SECTIONS[role].bot) as SectionKeys[]).map(
+          item => (
+            <li key={item}>
+              <SectionButton sectionKey={item} />
+            </li>
+          )
+        )}
+      </ul>
     </nav>
   )
 }

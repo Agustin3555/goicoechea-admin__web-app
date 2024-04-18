@@ -1,0 +1,19 @@
+.toggle-panel {
+  display: flex;
+  align-items: center;
+  gap: var(--glb-cmp-l-gap);
+  padding-inline: var(--glb-cmp-l-padding-inline);
+  height: var(--glb-cmp-l-height);
+
+  transition: background-color var(--pal-time-xs) ease-out;
+
+  &:hover {
+    background-color: var(--pal-color-gs-0);
+  }
+
+  @media (width <= 40rem) {
+    p {
+      display: none;
+    }
+  }
+}

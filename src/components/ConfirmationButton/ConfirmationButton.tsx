@@ -16,14 +16,14 @@ export enum STATUS {
 const ConfirmationButton = ({
   title,
   text,
-  iconName,
+  faIcon,
   trigger,
   style,
   extraAttrs,
 }: {
   title: string
   text?: string
-  iconName?: string
+  faIcon?: string
   trigger: () => Promise<boolean>
   style: ConfirmationButtonStyled.Props
   extraAttrs?: ButtonHTMLAttributes<HTMLButtonElement>
@@ -63,18 +63,16 @@ const ConfirmationButton = ({
   const componentsByStatus = {
     [STATUS.init]: (
       <>
-        {iconName && (
-          <Icon iconName={iconName} style={{ size: style.fontSize }} />
-        )}
+        {faIcon && <Icon faIcon={faIcon} style={{ size: style.fontSize }} />}
         {text && <span className="text">{text}</span>}
       </>
     ),
     [STATUS.loading]: <Spinner />,
     [STATUS.success]: (
-      <Icon iconName="fa-solid fa-check" style={{ size: style.fontSize }} />
+      <Icon faIcon="fa-solid fa-check" style={{ size: style.fontSize }} />
     ),
     [STATUS.error]: (
-      <Icon iconName="fa-solid fa-xmark" style={{ size: style.fontSize }} />
+      <Icon faIcon="fa-solid fa-xmark" style={{ size: style.fontSize }} />
     ),
   }
 

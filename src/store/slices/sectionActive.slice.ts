@@ -1,13 +1,13 @@
 import { Slice } from '../slice'
-import { SECTION_KEYS } from '@/pages/Admin/helpers'
+import { SectionKeys } from '@/constants'
 import { sectionActiveEntity } from '@/services'
 
-const DEFAULT_STATE: SECTION_KEYS = SECTION_KEYS.me
+const DEFAULT_STATE: SectionKeys = SectionKeys.ME
 
 export interface SectionActiveSlice {
-  sectionActive: SECTION_KEYS
+  sectionActive: SectionKeys
 
-  sectionActive_set: (key: SECTION_KEYS) => void
+  sectionActive_set: (key: SectionKeys) => void
 }
 
 export const createSectionActiveSlice: Slice<SectionActiveSlice> = set => {

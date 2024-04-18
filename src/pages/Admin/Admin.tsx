@@ -1,20 +1,31 @@
 import './Admin.css'
-import { useState } from 'react'
-import { Nav } from './components'
+import { AdvancedPanel, MainPanel, Nav } from './components'
+import { useAppStore } from '@/store'
 
 const Admin = () => {
-  const [disabled, setDisabled] = useState(false)
+  const showNav = useAppStore(store => store.showNav)
+  const showAdvancedPanel = useAppStore(store => store.showAdvancedPanel)
 
-  const handleDeepTouchClick = () => {}
+  const showNav_toggle = useAppStore(store => store.showNav_toggle)
+  const showAdvancedPanel_toggle = useAppStore(
+    store => store.showAdvancedPanel_toggle
+  )
+
+  const handleDeepTouchClick = () => {
+    showNav && showNav_toggle()
+    showAdvancedPanel && showAdvancedPanel_toggle()
+  }
 
   return (
     <div className="admin">
-      {/* <button
-        className="deep-touch"
-        disabled={disabled}
+      <MainPanel />
+      <button
+        title="Cerrar"
+        hidden={!(showNav || showAdvancedPanel)}
         onClick={handleDeepTouchClick}
-      /> */}
+      />
       <Nav />
+      <AdvancedPanel />
     </div>
   )
 }

@@ -26,7 +26,7 @@ const NotFound = () => {
             handleClick={handleGoBack}
           >
             <div className="button-content">
-              <Icon iconName="fa-solid fa-arrow-left" style={{ size: FONT_SIZE.s }} />
+              <Icon faIcon="fa-solid fa-arrow-left" style={{ size: FONT_SIZE.s }} />
               <span className="text">Volver</span>
             </div>
           </Button> */}

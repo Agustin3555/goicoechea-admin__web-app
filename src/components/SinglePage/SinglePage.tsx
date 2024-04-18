@@ -8,11 +8,9 @@ const SinglePage = ({
   title: string
   children: ReactNode | ReactNode[]
 }) => (
-  <main className="single-page">
-    <article>
-      <h1>{title}</h1>
-      {children}
-    </article>
+  <main className="single-page glass">
+    <h1>{title}</h1>
+    {children}
   </main>
 )
 

@@ -6,32 +6,29 @@ import { COLOR } from '@/styles'
 
 const styleByType: Record<
   NotifType,
-  {
-    iconName: string
-    backgroundColor: string
-  }
+  { faIcon: string; backgroundColor: string }
 > = {
   [NotifType.INFO]: {
-    iconName: 'fa-solid fa-info',
+    faIcon: 'fa-solid fa-info',
     backgroundColor: COLOR.d,
   },
   [NotifType.WARNING]: {
-    iconName: 'fa-solid fa-triangle-exclamation',
+    faIcon: 'fa-solid fa-triangle-exclamation',
     backgroundColor: COLOR.b,
   },
   [NotifType.ERROR]: {
-    iconName: 'fa-solid fa-exclamation',
+    faIcon: 'fa-solid fa-exclamation',
     backgroundColor: COLOR.a,
   },
   [NotifType.SUCCESS]: {
-    iconName: 'fa-solid fa-check',
+    faIcon: 'fa-solid fa-check',
     backgroundColor: COLOR.c,
   },
 }
 
 const Snackbar = () => {
-  const currentNotif = useAppStore(state => state.notifs[0])
-  const notifs_dequeue = useAppStore(state => state.notifs_dequeue)
+  const currentNotif = useAppStore(store => store.notifs[0])
+  const notifs_dequeue = useAppStore(store => store.notifs_dequeue)
 
   const currentMessageStyle = styleByType[currentNotif?.info.type]
 
@@ -55,7 +52,7 @@ const Snackbar = () => {
               className="message"
               style={{ backgroundColor: currentMessageStyle?.backgroundColor }}
             >
-              <Icon faIcon={currentMessageStyle?.iconName} />
+              <Icon faIcon={currentMessageStyle?.faIcon} />
               <p className="text">{currentNotif.info.text}</p>
             </div>
           )}

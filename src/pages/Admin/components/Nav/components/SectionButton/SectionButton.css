@@ -1,37 +1,27 @@
 .section-button {
-  --size: var(--palette-size-not-font-m);
-
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size);
-  height: var(--size);
-  border-radius: var(--palette-size-not-font-4xs);
+  width: var(--glb-cmp-l-height);
+  height: var(--glb-cmp-l-height);
 
-  color: var(--palette-color-gs-12);
-  background-color: var(--palette-color-gs-0);
+  color: var(--pal-color-gs-12);
   cursor: pointer;
 
-  transition: color var(--palette-time-s) ease-out,
-    background-color var(--palette-time-s) ease-out,
-    box-shadow var(--palette-time-s) ease-out;
+  transition: color var(--pal-time-s) ease-out,
+    background-color var(--pal-time-s) ease-out;
 
   &:hover {
-    box-shadow: var(--decorator-shadow-1);
-  }
-
-  input {
-    display: none;
+    background-color: var(--pal-color-gs-0);
   }
 }
 
 .section-button--active {
-  color: var(--palette-color-gs-0);
-  background-color: var(--palette-color-a);
+  color: var(--pal-color-gs-0);
+  background-color: var(--pal-color-a);
   cursor: default;
 
   &:hover {
-    box-shadow: initial;
+    background-color: var(--pal-color-a);
   }
 }

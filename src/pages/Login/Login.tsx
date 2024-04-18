@@ -20,9 +20,7 @@ import { AppError, sleep } from '@/helpers'
 const Login = () => {
   const navigate = useNavigate()
 
-  const authUser_set = useAppStore(state => state.authUser_set)
-  const authUser_reset = useAppStore(state => state.authUser_reset)
-  const notifs_enqueue = useAppStore(state => state.notifs_enqueue)
+  const notifs_enqueue = useAppStore(store => store.notifs_enqueue)
 
   const [loadingButtonState, setLoadingButtonState] = useState(
     LoadingButtonState.READY
@@ -34,7 +32,8 @@ const Login = () => {
   })
 
   useEffect(() => {
-    authUser_reset()
+    // TODO: comentar
+    tokenEntity.delete()
   }, [])
 
   const handleFieldChange: ChangeEventHandler<HTMLInputElement> = event => {
@@ -56,23 +55,16 @@ const Login = () => {
     } else {
       tokenEntity.set(loginResponse.token)
 
-      const userResponse = await AuthService.me()
+      notifs_enqueue({
+        type: NotifType.INFO,
+        text: 'Logueado con éxito',
+      })
 
-      if (userResponse) {
-        authUser_set(userResponse)
+      setLoadingButtonState(LoadingButtonState.SUCCESS)
 
-        notifs_enqueue({
-          type: NotifType.INFO,
-          text: 'Logueado con éxito',
-        })
+      await sleep(1500)
 
-        setLoadingButtonState(LoadingButtonState.SUCCESS)
-
-        await sleep(1500)
-
-        // Redirigir al usuario a la página de administración
-        navigate(`/${PrivateRoutes.ADMIN}`, { replace: true })
-      }
+      navigate(`/${PrivateRoutes.ADMIN}`, { replace: true })
     }
 
     await sleep(1500)

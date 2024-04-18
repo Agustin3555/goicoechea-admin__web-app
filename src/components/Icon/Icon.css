@@ -1,11 +1,10 @@
 :root {
-  --cmp-icon-size: 1.25rem;
+  --cmp-icon-size: var(--pal-size-not-font-xs);
 }
 
 .icon {
   --fa-display: flex;
 
-  position: relative;
   align-items: center;
   justify-content: center;
   width: var(--cmp-icon-size);

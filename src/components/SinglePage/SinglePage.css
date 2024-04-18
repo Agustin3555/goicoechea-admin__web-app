@@ -1,30 +1,20 @@
 .single-page {
-  position: relative;
+  --separation: var(--pal-size-not-font-m);
+  --cmp-glass-border-radius: var(--pal-size-not-font-2xs);
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--palette-size-not-font-s);
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  gap: calc(var(--separation) * 2);
+  margin: var(--pal-size-not-font-s);
+  padding: var(--separation);
+  width: calc(var(--pal-size-not-font-2xl) * 2);
 
-  article {
-    --gap: var(--palette-size-not-font-m);
+  box-shadow: var(--pal-shadow-1);
 
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--gap) * 2);
-    padding: var(--gap);
-    width: calc(var(--palette-size-not-font-2xl) * 2);
-    border-radius: var(--palette-size-not-font-2xs);
+  h1 {
+    font-size: var(--pal-size-font-l);
+    font-weight: 700;
 
-    background-color: var(--palette-color-gs-0);
-    box-shadow: var(--decorator-shadow-2);
-
-    h1 {
-      font-size: var(--palette-size-font-l);
-      font-weight: 700;
-
-      color: var(--palette-color-gs-12);
-    }
+    color: var(--pal-color-gs-14);
   }
 }

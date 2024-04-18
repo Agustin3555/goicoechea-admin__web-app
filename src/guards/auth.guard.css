@@ -1,0 +1,11 @@
+.auth-guard {
+  --auth-guard-separation: var(--pal-size-not-font-s);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--auth-guard-separation);
+  padding: var(--auth-guard-separation);
+
+  box-shadow: var(--pal-shadow-1);
+}

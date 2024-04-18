@@ -1,23 +1,23 @@
 .loading-button {
-  height: var(--palette-size-not-font-m);
-  border-radius: var(--palette-size-not-font-4xs);
+  height: var(--pal-size-not-font-m);
+  border-radius: var(--pal-size-not-font-4xs);
 
-  color: var(--palette-color-gs-0);
-  background-color: var(--palette-color-a);
+  color: var(--pal-color-gs-0);
+  background-color: var(--pal-color-a);
 
-  transition: box-shadow var(--palette-time-s) ease-out;
+  transition: box-shadow var(--pal-time-s) ease-out;
 
   &:hover {
-    box-shadow: var(--decorator-shadow-1);
+    box-shadow: var(--pal-shadow-1);
   }
 
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--palette-size-not-font-2xs);
+    gap: var(--pal-size-not-font-2xs);
 
-    transition: opacity var(--palette-time-s) ease-out;
+    transition: opacity var(--pal-time-s) ease-out;
   }
 
   .fade-enter {

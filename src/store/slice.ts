@@ -1,6 +1,16 @@
 import { StateCreator } from 'zustand'
-import { AuthUserSlice, NotificationsSlice, SectionActiveSlice } from './slices'
+import {
+  ActiveViewsSlice,
+  AuthUserSlice,
+  NotificationsSlice,
+  PanelsShownSlice,
+  SectionActiveSlice,
+} from './slices'
 
-export type AppStore = AuthUserSlice & NotificationsSlice & SectionActiveSlice
+export type AppStore = AuthUserSlice &
+  NotificationsSlice &
+  PanelsShownSlice &
+  SectionActiveSlice &
+  ActiveViewsSlice
 
 export type Slice<T> = StateCreator<AppStore, [], [], T>

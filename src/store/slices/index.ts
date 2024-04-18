@@ -1,3 +1,5 @@
+export * from './activeViews.slice'
 export * from './authUser.slice'
 export * from './notifications'
+export * from './panelsShown.slice'
 export * from './sectionActive.slice'

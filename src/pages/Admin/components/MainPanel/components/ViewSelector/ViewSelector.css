@@ -1,0 +1,83 @@
+.view-selector {
+  --cmp-icon-size: var(--pal-size-font-xs);
+
+  position: relative;
+
+  button {
+    --cmp-separator-long: var(--cmp-icon-size);
+    --cmp-separator-color: rgba(var(--pal-color-base-gs-12), 0.5);
+
+    display: flex;
+    align-items: center;
+    gap: var(--glb-cmp-l-gap);
+    padding-inline: var(--glb-cmp-l-padding-inline);
+    height: var(--glb-cmp-l-height);
+    border-radius: var(--pal-size-not-font-3xs);
+
+    transition: background-color var(--pal-time-s) ease-out;
+
+    &:hover {
+      background-color: var(--pal-color-gs-1);
+    }
+
+    .arrow {
+      transition: rotate var(--pal-time-s) ease;
+    }
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    border-radius: var(--pal-size-not-font-4xs);
+
+    background-color: var(--pal-color-gs-3);
+    box-shadow: var(--pal-shadow-1), var(--pal-bevel-highlight);
+    scale: 0.975;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transition: scale var(--pal-time-s) ease, translate var(--pal-time-s) ease,
+      opacity var(--pal-time-s) ease-out;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: var(--glb-cmp-l-gap);
+      padding-inline: var(--pal-size-font-xs);
+      height: 2rem;
+
+      cursor: pointer;
+
+      transition: background-color var(--pal-time-s) ease-out;
+
+      &:hover {
+        background-color: var(--pal-color-gs-1);
+      }
+
+      &[data-selected='true'] {
+        color: var(--pal-color-gs-0);
+        background-color: var(--pal-color-a);
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &[data-open='true'] {
+    button {
+      background-color: var(--pal-color-gs-1);
+
+      .arrow {
+        rotate: 0.5turn;
+      }
+    }
+
+    ul {
+      translate: 0 var(--pal-size-not-font-3xs);
+      scale: initial;
+      opacity: initial;
+      pointer-events: initial;
+    }
+  }
+}

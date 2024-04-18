@@ -18,26 +18,29 @@
 }
 
 .snackbar {
-  color: var(--palette-color-gs-0);
+  position: relative;
+  z-index: 50;
+
+  color: var(--pal-color-gs-0);
 
   .animation-container {
     display: flex;
     justify-content: center;
 
-    transition: scale var(--palette-time-m) ease,
-      translate var(--palette-time-m) ease, opacity var(--palette-time-m) ease;
+    transition: scale var(--pal-time-m) ease, translate var(--pal-time-m) ease,
+      opacity var(--pal-time-m) ease;
 
     .message {
       position: fixed;
       bottom: 0;
       display: flex;
       align-items: center;
-      gap: var(--palette-size-font-s);
-      margin: var(--palette-size-not-font-s);
-      padding: var(--palette-size-font-s);
-      border-radius: var(--palette-size-not-font-3xs);
+      gap: var(--pal-size-font-s);
+      margin: var(--pal-size-not-font-s);
+      padding: var(--pal-size-font-s);
+      border-radius: var(--pal-size-not-font-3xs);
 
-      box-shadow: var(--decorator-shadow-2);
+      box-shadow: var(--pal-shadow-2);
 
       .icon {
         flex-grow: 1;
@@ -50,7 +53,7 @@
 
   .fade-enter {
     scale: 1.05;
-    translate: 0 var(--palette-size-not-font-xl);
+    translate: 0 var(--pal-size-not-font-xl);
     opacity: 0;
   }
 
@@ -68,7 +71,7 @@
 
   .fade-exit-active {
     scale: 1.05;
-    translate: 0 var(--palette-size-not-font-xl);
+    translate: 0 var(--pal-size-not-font-xl);
     opacity: 0;
   }
 
